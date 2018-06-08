@@ -1,0 +1,22 @@
+
+.card {
+  min-width: 15rem;
+  max-width: 16rem;
+  margin-bottom: 5px;
+
+}
+.img-fluid{
+  min-height: 150px;
+}
+.plus-card{
+  text-align: center;
+  color: #28a745;
+  margin: auto;
+  cursor: pointer;
+  span{
+    font-size: 128px;
+  }
+}
+.modal.show{
+    display: block;
+}

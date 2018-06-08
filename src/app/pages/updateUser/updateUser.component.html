@@ -1,0 +1,40 @@
+<div class="modal fade show" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Update user</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="closeModal()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <form  autocomplete="off" [formGroup]="updateForm" (ngSubmit)="onSubmit()">
+        <div class="modal-body mx-3">
+          <div class="col-md-12">
+            <div class="form-group input-group">
+                 <span class="input-group-append">
+                    <div class="input-group-text bg-transparent"><i class="fa fa-user"></i></div>
+                </span>
+              <input placeholder="Name" class="form-control py-2 border-right-0 border" type="text"   formControlName="name">
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="form-group input-group">
+                 <span class="input-group-append">
+                    <div class="input-group-text bg-transparent"><i class="fa fa-briefcase"></i></div>
+                </span>
+              <input placeholder="Job" class="form-control py-2 border-right-0 border" type="text" formControlName="job">
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-footer d-flex justify-content-center">
+          <button class="btn btn-success">Update</button>
+        </div>
+      </form>
+
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,38 @@
+<app-header></app-header>
+
+<main role="main">
+  <div class="container">
+
+    <div class="card-deck" >
+
+      <div class="shadow-sm card plus-card" (click)="showModal('add')">
+        <span class="fa fa-plus"></span>
+      </div>
+
+      <div class="shadow-sm card" *ngFor="let user of users;">
+        <!--Card image-->
+        <img class="img-fluid" src="{{user.avatar }}" alt="Card image cap">
+        <!--Card content-->
+        <div class="card-body">
+          <!--Title-->
+          <h4 class="card-title">{{user.first_name }} {{user.last_name }}</h4>
+          <p class="card-text">{{user.job}}</p>
+          <div class="ovidos-btn-group">
+            <button type="button" class="btn btn-sm btn-outline-warning" (click)="showModal('edit',user)">Edit</button>
+            <button type="button" class="btn btn-sm btn-outline-danger" (click)="showModal('delete',user)">Delete</button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!--Modals section for Crud-->
+
+          <app-add-user [action]="action" *ngIf="(action | async) === 'add'" [users]="users"></app-add-user>
+          <app-update-user [action]="action" *ngIf="(action | async) === 'edit'" [users]="users" [selectedUser]="selectedUser  "></app-update-user>
+          <app-delete-user [action]="action" *ngIf="(action  | async) === 'delete' " [users]="users" [selectedUser]="selectedUser"></app-delete-user>
+
+  <div id="modalBackDrop" class=""></div>
+</main>

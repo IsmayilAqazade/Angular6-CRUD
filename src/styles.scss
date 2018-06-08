@@ -1,0 +1,21 @@
+@import "~bootstrap/scss/bootstrap";
+@import "~font-awesome/css/font-awesome.css";
+
+:root {
+  --input-padding-x: .75rem;
+  --input-padding-y: .75rem;
+}
+bootstrap-growl{
+  position: absolute;
+  right:8px;
+  top:8px;
+  z-index:10;
+}
+.ovidos-btn-group{
+  .btn{
+    margin-left: 5px;
+  }
+}
+.modal.show{
+  display: block;
+}

@@ -1,0 +1,25 @@
+<div class="modal fade show"  tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Delete user</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="closeModal()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form  autocomplete="off" [formGroup]="deleteForm" (ngSubmit)="onSubmit()">
+        <div class="modal-body mx-3">
+
+          <div class="col-md-12">
+            <p>Are you sure want to delete this user?</p>
+          </div>
+        </div>
+
+        <div class="modal-footer d-flex justify-content-center">
+          <button class="btn btn-danger">Yes</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

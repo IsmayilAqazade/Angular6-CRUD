@@ -1,0 +1,30 @@
+<div class="row">
+
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="form-signin">
+
+  <div class="text-center mb-4">
+    <h1 class="h3 mb-3 font-weight-normal">Login</h1>
+  </div>
+  <div class="form-label-group">
+    <input type="email" id="email" formControlName="email" value="" ngModel class="form-control" placeholder="Email address" autofocus >
+    <label for="email">Email address</label>
+    <div *ngIf="submitted && loginForm.controls.email.errors" class="error">
+      <div *ngIf="loginForm.controls.email.errors.required">Email is required</div>
+    </div>
+  </div>
+
+  <div class=" form-label-group">
+    <input type="password" formControlName="password" ngModel id="password" value="" class="form-control" placeholder="Password"
+           >
+    <label for="password">Password</label>
+    <div *ngIf="submitted && loginForm.controls.password.errors" class="error">
+      <div *ngIf="loginForm.controls.password.errors.required">Password is required</div>
+    </div>
+  </div>
+
+  <button class="btn btn-lg btn-primary btn-block" >Sign in</button>
+  <div *ngIf="invalidLogin" class="error">
+    <div>Invalid credentials.</div>
+  </div>
+</form>
+</div>
